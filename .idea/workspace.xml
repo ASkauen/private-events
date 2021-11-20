@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Install devise">
+    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Set events#index as root">
+      <change afterPath="$PROJECT_DIR$/app/javascript/application.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/mailer.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/mailer.text.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/packs/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/packs/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/events/index.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/events/index.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +40,10 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="add_tailwindcss" />
+                    <option name="lastUsedInstant" value="1637441978" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="add_haml" />
                     <option name="lastUsedInstant" value="1637440175" />
                   </RecentBranch>
@@ -66,10 +72,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/javascript/packs" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="rails g model Event date:string" />
-      <command value="rails g controller Events" />
       <command value="rails g devise User" />
       <command value="rdbm" />
       <command value="rails g migration AddTitleDescriptionToEvent title:string description:string" />
@@ -90,10 +100,15 @@
       <command value="rail g model Event title:string desc:string date:string" />
       <command value="rails db:migrate" />
       <command value="rails db:reset" />
-      <command value="rails s" />
       <command value="rails g model Event title:string desc:string date:string" />
       <command value="rails c" />
       <command value="pwd" />
+      <command value="rails g controller Events" />
+      <command value="yarn add tailwindcss" />
+      <command value="npx tailwindcss init" />
+      <command value="npm uninstall tailwindcss postcss autoprefixer " />
+      <command value="npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9 " />
+      <command value="rails s" />
     </option>
   </component>
   <component name="RunManager" selected="Ruby Console.rails console">
@@ -236,6 +251,7 @@
       <option name="presentableId" value="Default" />
       <updated>1637430901502</updated>
       <workItem from="1637430905858" duration="9206000" />
+      <workItem from="1637441733584" duration="2634000" />
     </task>
     <task id="LOCAL-00001" summary="Add devise">
       <created>1637433985576</created>
@@ -293,7 +309,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637440416791</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add events model and controller">
+      <created>1637441955338</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1637441955339</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Set events#index as root">
+      <created>1637443673535</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1637443673535</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +339,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add devise" />
@@ -318,7 +349,9 @@
     <MESSAGE value="Add title and description to event" />
     <MESSAGE value="merge master" />
     <MESSAGE value="Install devise" />
-    <option name="LAST_COMMIT_MESSAGE" value="Install devise" />
+    <MESSAGE value="Add events model and controller" />
+    <MESSAGE value="Set events#index as root" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set events#index as root" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/private_events@rails_console.rcov" NAME="rails console Coverage Results" MODIFIED="1637441271625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="private-events" />
