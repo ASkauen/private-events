@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="merge master" />
+    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Install devise">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/mailer.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/mailer.text.erb" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GeneratorOptions">
+    <option name="VCS_SHOW_CONFIRMATION" value="true" />
+    <option name="ENVIRONMENT" value="development" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,18 +70,30 @@
     <option name="myCommands">
       <command value="rails g model Event date:string" />
       <command value="rails g controller Events" />
-      <command value="rails g devise:views" />
       <command value="rails g devise User" />
       <command value="rdbm" />
       <command value="rails g migration AddTitleDescriptionToEvent title:string description:string" />
-      <command value="rails db:migrate" />
-      <command value="rails c" />
-      <command value="rails s" />
       <command value="rails x" />
       <command value="bundle install" />
       <command value="rails g view index" />
-      <command value="bundle" />
       <command value="rails g devise:install" />
+      <command value="rails g devise:views" />
+      <command value="bundle" />
+      <command value="for file in app/views/devise/**/*.erb; do html2haml -e $file ${file%erb}haml &amp;&amp; rm $file; done" />
+      <command value="for file in app/views/layouts/**/*.erb; do html2haml -e $file ${file%erb}haml &amp;&amp; rm $file; done" />
+      <command value="for file in app/views/layouts/*.erb; do html2haml -e $file ${file%erb}haml &amp;&amp; rm $file; done" />
+      <command value="for file in app/views/layouts/**.erb; do html2haml -e $file ${file%erb}haml &amp;&amp; rm $file; done" />
+      <command value="for file in app/views/**/*.erb; do html2haml -e $file ${file%erb}haml &amp;&amp; rm $file; done" />
+      <command value="for file in app/views/layouts/*; do html2haml -e $file ${file%erb}haml &amp;&amp; rm $file; done" />
+      <command value="for file in app/views/layouts/application.html.erb; do html2haml -e $file ${file%erb}haml &amp;&amp; rm $file; done" />
+      <command value="for f in *.html.erb; do html2haml $f ${f/\.html\.erb/.haml}; done " />
+      <command value="rail g model Event title:string desc:string date:string" />
+      <command value="rails db:migrate" />
+      <command value="rails db:reset" />
+      <command value="rails s" />
+      <command value="rails g model Event title:string desc:string date:string" />
+      <command value="rails c" />
+      <command value="pwd" />
     </option>
   </component>
   <component name="RunManager" selected="Ruby Console.rails console">
@@ -199,6 +222,7 @@
       <list>
         <item itemvalue="Ruby Console.rails console" />
         <item itemvalue="Ruby Console.rails console" />
+        <item itemvalue="Ruby Console.rails console" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +235,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637430901502</updated>
-      <workItem from="1637430905858" duration="8063000" />
+      <workItem from="1637430905858" duration="9206000" />
     </task>
     <task id="LOCAL-00001" summary="Add devise">
       <created>1637433985576</created>
@@ -262,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637440372878</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Install devise">
+      <created>1637440416791</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637440416791</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,9 +317,10 @@
     <MESSAGE value="Add navbar partial" />
     <MESSAGE value="Add title and description to event" />
     <MESSAGE value="merge master" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge master" />
+    <MESSAGE value="Install devise" />
+    <option name="LAST_COMMIT_MESSAGE" value="Install devise" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/private_events@rails_console.rcov" NAME="rails console Coverage Results" MODIFIED="1637434770332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="private-events" />
+    <SUITE FILE_PATH="coverage/private_events@rails_console.rcov" NAME="rails console Coverage Results" MODIFIED="1637441271625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="private-events" />
   </component>
 </project>
