@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Add title and description to event">
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-    </list>
+    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="merge master" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,11 +28,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="add_haml" />
-                    <option name="lastUsedInstant" value="1637440006" />
+                    <option name="lastUsedInstant" value="1637440175" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1637440005" />
+                    <option name="lastUsedInstant" value="1637440105" />
                   </RecentBranch>
                 </list>
               </option>
@@ -61,7 +59,6 @@
     <option name="myCommands">
       <command value="rails g model Event date:string" />
       <command value="rails g controller Events" />
-      <command value="rails g devise:install" />
       <command value="rails g devise:views" />
       <command value="rails g devise User" />
       <command value="rdbm" />
@@ -71,6 +68,9 @@
       <command value="rails s" />
       <command value="rails x" />
       <command value="bundle install" />
+      <command value="rails g view index" />
+      <command value="bundle" />
+      <command value="rails g devise:install" />
     </option>
   </component>
   <component name="RunManager" selected="Ruby Console.rails console">
@@ -211,7 +211,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637430901502</updated>
-      <workItem from="1637430905858" duration="7715000" />
+      <workItem from="1637430905858" duration="8063000" />
     </task>
     <task id="LOCAL-00001" summary="Add devise">
       <created>1637433985576</created>
@@ -255,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637435073282</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="merge master">
+      <created>1637440372878</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1637440372878</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +285,8 @@
     <MESSAGE value="Update to show all events" />
     <MESSAGE value="Add navbar partial" />
     <MESSAGE value="Add title and description to event" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add title and description to event" />
+    <MESSAGE value="merge master" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge master" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/private_events@rails_console.rcov" NAME="rails console Coverage Results" MODIFIED="1637434770332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="private-events" />
