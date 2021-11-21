@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Add guard-livereload">
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/_navbar.html.haml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/_notifications.html.haml" afterDir="false" />
+    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Add validations for title, desc and date to event">
+      <change afterPath="$PROJECT_DIR$/app/views/events/_event.html.haml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/events/show.html.haml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/packs/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/shared/_error_messages.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/shared/_error_messages.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/shared/_links.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/shared/_links.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/events/index.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/events/index.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/_navbar.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_navbar.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +79,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/javascript/stylesheets" />
       <recent name="$PROJECT_DIR$/app/javascript/packs" />
     </key>
   </component>
@@ -96,7 +106,6 @@
       <command value="rails db:migrate" />
       <command value="rails db:reset" />
       <command value="rails g model Event title:string desc:string date:string" />
-      <command value="rails c" />
       <command value="pwd" />
       <command value="rails g controller Events" />
       <command value="yarn add tailwindcss" />
@@ -110,6 +119,8 @@
       <command value="bundle exec guard init" />
       <command value="bundle exec guard" />
       <command value="rails routes" />
+      <command value="raisl c" />
+      <command value="rails c" />
     </option>
   </component>
   <component name="RunManager" selected="Ruby Console.rails console">
@@ -252,7 +263,7 @@
       <option name="presentableId" value="Default" />
       <updated>1637430901502</updated>
       <workItem from="1637430905858" duration="9206000" />
-      <workItem from="1637441733584" duration="5990000" />
+      <workItem from="1637441733584" duration="18534000" />
     </task>
     <task id="LOCAL-00001" summary="Add devise">
       <created>1637433985576</created>
@@ -359,7 +370,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637446849163</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add navbar and flash messages">
+      <created>1637448680885</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1637448680885</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add validations for title, desc and date to event">
+      <created>1637450454631</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1637450454631</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +415,9 @@
     <MESSAGE value="Add tailwind" />
     <MESSAGE value="Add users table" />
     <MESSAGE value="Add guard-livereload" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add guard-livereload" />
+    <MESSAGE value="Add navbar and flash messages" />
+    <MESSAGE value="Add validations for title, desc and date to event" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add validations for title, desc and date to event" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/private_events@rails_console.rcov" NAME="rails console Coverage Results" MODIFIED="1637441271625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="private-events" />
