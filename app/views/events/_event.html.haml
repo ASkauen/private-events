@@ -1,0 +1,8 @@
+= link_to event_path(id: event.id) do
+  .grid.grid-rows-auto.gap-2.mx-auto.shadow-card.rounded-md.mt-10{class: "w-1/2"}
+    .text-center.italic.text-2xl.mt-2
+      = event.title
+    .text-lg.text-center.mx-7.text-gray-500
+      =event.desc
+    .text.xl.text-center.mb-2
+      = event.date
