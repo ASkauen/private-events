@@ -1,7 +1,7 @@
 .bg-gray-200.h-20.grid.items-center.grid-cols-2
   .text-4xl.italic.ml-5
-    %p Private Events
-  .flex.gap-10
+    = link_to "Private Events", root_url
+  .flex.gap-10.ml-auto.mr-10
     - if user_signed_in?
       = link_to "Sign out", destroy_user_session_path, method: :delete
     - else
