@@ -1,0 +1,8 @@
+.text-center
+  - @user.attributes.each do |a|
+    #{a[0]} : #{a[1]}
+    %br
+.text-center.text-3xl.bold.italic.mt-10
+  Events:
+  - @user.events.each do |e|
+    = render "events/event", event: e

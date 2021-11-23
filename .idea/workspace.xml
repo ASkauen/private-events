@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Add user_id ref to event" />
+    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Add user show page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,12 +31,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="event_user_rel" />
-                    <option name="lastUsedInstant" value="1637532835" />
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1637664258" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1637445344" />
+                    <option name="branchName" value="event_user_rel" />
+                    <option name="lastUsedInstant" value="1637532835" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="add_tailwindcss" />
@@ -107,11 +107,12 @@
       <command value="bundle" />
       <command value="bundle exec guard init" />
       <command value="bundle exec guard" />
-      <command value="rails routes" />
       <command value="raisl c" />
       <command value="rails c" />
       <command value="rails s" />
       <command value="git checkout -b event_user_rel" />
+      <command value="rails g controller Users" />
+      <command value="rails routes" />
     </option>
   </component>
   <component name="RunManager" selected="Ruby Console.rails console">
@@ -255,7 +256,7 @@
       <updated>1637430901502</updated>
       <workItem from="1637430905858" duration="9206000" />
       <workItem from="1637441733584" duration="27270000" />
-      <workItem from="1637656318398" duration="6136000" />
+      <workItem from="1637656318398" duration="7561000" />
     </task>
     <task id="LOCAL-00001" summary="Add devise">
       <created>1637433985576</created>
@@ -460,7 +461,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637664205350</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Add user_id ref to event">
+      <created>1637664230616</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1637664230616</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Add user show page">
+      <created>1637665512104</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1637665512104</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Add user show page">
+      <created>1637665622775</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1637665622775</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +501,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add devise" />
     <MESSAGE value="Update routes &gt; root &quot;events#index&quot;" />
     <MESSAGE value="Update to show all events" />
     <MESSAGE value="Add navbar partial" />
@@ -504,7 +525,8 @@
     <MESSAGE value="Edit forms for sign up and sign in" />
     <MESSAGE value="-" />
     <MESSAGE value="Add user_id ref to event" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add user_id ref to event" />
+    <MESSAGE value="Add user show page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add user show page" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/private_events@rails_console.rcov" NAME="rails console Coverage Results" MODIFIED="1637441271625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="private-events" />
