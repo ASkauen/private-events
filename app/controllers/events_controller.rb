@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   def index
     @events = Event.all
@@ -7,5 +9,4 @@ class EventsController < ApplicationController
     puts params[:id]
     @event = Event.find(params[:id])
   end
-
 end
