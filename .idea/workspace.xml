@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Add user show page" />
+    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Rubocop" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,6 +113,8 @@
       <command value="git checkout -b event_user_rel" />
       <command value="rails g controller Users" />
       <command value="rails routes" />
+      <command value="rubocop -a" />
+      <command value="rubocop -A" />
     </option>
   </component>
   <component name="RunManager" selected="Ruby Console.rails console">
@@ -256,7 +258,7 @@
       <updated>1637430901502</updated>
       <workItem from="1637430905858" duration="9206000" />
       <workItem from="1637441733584" duration="27270000" />
-      <workItem from="1637656318398" duration="7561000" />
+      <workItem from="1637656318398" duration="8390000" />
     </task>
     <task id="LOCAL-00001" summary="Add devise">
       <created>1637433985576</created>
@@ -482,7 +484,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637665622775</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add user show page">
+      <created>1637665680213</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1637665680213</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Rubocop">
+      <created>1637665717542</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1637665717542</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +517,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update routes &gt; root &quot;events#index&quot;" />
     <MESSAGE value="Update to show all events" />
     <MESSAGE value="Add navbar partial" />
     <MESSAGE value="Add title and description to event" />
@@ -526,7 +541,8 @@
     <MESSAGE value="-" />
     <MESSAGE value="Add user_id ref to event" />
     <MESSAGE value="Add user show page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add user show page" />
+    <MESSAGE value="Rubocop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rubocop" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/private_events@rails_console.rcov" NAME="rails console Coverage Results" MODIFIED="1637441271625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="private-events" />
