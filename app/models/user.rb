@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :events, inverse_of: :creator
 
-  validates :username, uniqueness: true
+  validates :username, presence: true, uniqueness: true
 end
 
 # == Schema Information
