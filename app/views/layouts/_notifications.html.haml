@@ -1,6 +1,7 @@
--if notice
-  .bg-green-300.text-center
-    = notice
-- if alert
-  .bg-yellow-200.text-center
-    = alert
+#error_explanation
+  -if notice
+    .bg-green-300.text-center
+      = notice
+  - if alert
+    .bg-yellow-200.text-center
+      = alert

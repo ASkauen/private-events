@@ -8,8 +8,13 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "https://code.jquery.com/jquery-1.7.1.min.js"
   %body
     = render "layouts/navbar"
     = render "layouts/notifications", notice: notice
     = yield
+  %script{type: "text/javascript"}
+    setTimeout(function(){
+    document.getElementById('error_explanation').remove();
+    }, 5000);
 
