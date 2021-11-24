@@ -7,9 +7,9 @@
         New event
   - else
     %p
-  .flex.gap-10.ml-auto.mr-10
+  .flex.gap-10.ml-auto.mr-10.items-center
     - if user_signed_in?
-      = link_to current_user.email, user_path(id: current_user.id)
+      = link_to current_user.username, user_path(id: current_user.id), class: "text-xl font-medium"
       = link_to "Sign out", destroy_user_session_path, method: :delete
     - else
       = link_to "Sign in", new_user_session_path
