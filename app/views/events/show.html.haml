@@ -9,17 +9,26 @@
     .text-xl
       - creator = @event.creator
       Created by #{link_to creator.username, user_path(id: creator.id), class: "text-blue-600 hover:underline"}
-    - unless current_user.attendances.find_by(event_id: @event.id)
-      = link_to new_attendance_path(id: @event.id) do
-        .text-2xl.text-green-800.px-10.py-2.bg-green-300.rounded-full.cursor-pointer
-          Attend
-    -else
-      .bg-gray-100.text-center.p-3.shadow-card.rounded-md
-        .italic.mb-3
-          Attending
-        = link_to attendance_path(id: @event.id), method: "DELETE" do
-          .text-xl.text-red-800.px-5.py-1.bg-red-300.rounded-full.cursor-pointer
-            Cancel
+    - if current_user.username == @event.creator.username
+      .inline-flex.gap-3
+        = link_to edit_event_path do
+          .text-xl.px-5.py-2.bg-gray-200.rounded-md.hover:bg-gray-300
+            Edit
+        = link_to event_path, method: 'DELETE' do
+          .text-xl.px-5.py-2.bg-red-200.rounded-md.hover:bg-red-300
+            Delete
+    - else
+      - unless current_user.attendances.find_by(event_id: @event.id)
+        = link_to new_attendance_path(id: @event.id) do
+          .text-2xl.text-green-800.px-10.py-2.bg-green-300.rounded-full.cursor-pointer
+            Attend
+      -else
+        .bg-gray-100.text-center.p-3.shadow-card.rounded-md
+          .italic.mb-3
+            Attending
+          = link_to attendance_path(id: @event.id), method: "DELETE" do
+            .text-xl.text-red-800.px-5.py-1.bg-red-300.rounded-full.cursor-pointer
+              Cancel
     .text-blue-600.mt-10
       = link_to "< Back", "javascript:history.back()", class: "hover:underline"
   .text-center

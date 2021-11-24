@@ -2,6 +2,14 @@
 
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action only: [:edit, :update, :destroy] do
+    event = Event.find(params[:id])
+    if current_user != event.creator
+      flash[:alert] = "Unauthorized"
+      redirect_to event_path(event)
+    end
+  end
+
   def index
     @events = Event.all
   end
@@ -22,6 +30,27 @@ class EventsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    event = Event.find(params[:id])
+    if event.update(event_params)
+      flash[:notice] = "Event updated"
+      redirect_to event_path(event)
+    else
+      flash[:alert] = "Something went wrong"
+      redirect_to edit_event_path
+    end
+  end
+
+  def destroy
+    Event.find(params[:id]).destroy
+    flash[:alert] = "Event deleted"
+    redirect_to root_path
   end
 
   private
