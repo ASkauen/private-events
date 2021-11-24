@@ -1,6 +1,12 @@
-.bg-gray-200.h-20.grid.items-center.grid-cols-2
+.bg-gray-200.h-20.grid.items-center.grid-cols-3
   .text-4xl.italic.ml-5
     = link_to "Private Events", root_url
+  - unless request.path == new_event_path
+    = link_to new_event_path do
+      .flex-box.text-center.rounded-md.text-white.text-2xl.bg-green-400.mx-auto.py-2.shadow-lg{class: "w-1/2"}
+        New event
+  - else
+    %p
   .flex.gap-10.ml-auto.mr-10
     - if user_signed_in?
       = link_to current_user.email, user_path(id: current_user.id)

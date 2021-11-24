@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Rubocop" />
+    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Rubocop">
+      <change afterPath="$PROJECT_DIR$/app/views/events/new.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/events/_event.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/events/_event.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/_navbar.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_navbar.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +37,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="new_event" />
+                    <option name="lastUsedInstant" value="1637667974" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
                     <option name="lastUsedInstant" value="1637664258" />
@@ -112,9 +123,9 @@
       <command value="rails s" />
       <command value="git checkout -b event_user_rel" />
       <command value="rails g controller Users" />
-      <command value="rails routes" />
       <command value="rubocop -a" />
       <command value="rubocop -A" />
+      <command value="rails routes" />
     </option>
   </component>
   <component name="RunManager" selected="Ruby Console.rails console">
@@ -258,7 +269,7 @@
       <updated>1637430901502</updated>
       <workItem from="1637430905858" duration="9206000" />
       <workItem from="1637441733584" duration="27270000" />
-      <workItem from="1637656318398" duration="8390000" />
+      <workItem from="1637656318398" duration="18649000" />
     </task>
     <task id="LOCAL-00001" summary="Add devise">
       <created>1637433985576</created>
