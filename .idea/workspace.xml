@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Rubocop">
-      <change afterPath="$PROJECT_DIR$/app/views/events/new.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/events/_event.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/events/_event.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_navbar.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_navbar.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+    <list default="true" id="d6ac58a0-5bd3-4c77-b851-cca4f25c6d0b" name="Changes" comment="Add annotate gem">
+      <change beforePath="$PROJECT_DIR$/app/models/event.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/event.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tasks/auto_annotate_models.rake" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tasks/auto_annotate_models.rake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/models/event_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/event_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/models/user_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/user_test.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +38,10 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
+                    <option name="branchName" value="add_username_devise" />
+                    <option name="lastUsedInstant" value="1637740840" />
+                  </RecentBranch>
+                  <RecentBranch>
                     <option name="branchName" value="new_event" />
                     <option name="lastUsedInstant" value="1637667974" />
                   </RecentBranch>
@@ -52,10 +56,6 @@
                   <RecentBranch>
                     <option name="branchName" value="add_tailwindcss" />
                     <option name="lastUsedInstant" value="1637441978" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="add_haml" />
-                    <option name="lastUsedInstant" value="1637440175" />
                   </RecentBranch>
                 </list>
               </option>
@@ -104,7 +104,6 @@
       <command value="for file in app/views/layouts/application.html.erb; do html2haml -e $file ${file%erb}haml &amp;&amp; rm $file; done" />
       <command value="for f in *.html.erb; do html2haml $f ${f/\.html\.erb/.haml}; done " />
       <command value="rail g model Event title:string desc:string date:string" />
-      <command value="rails db:migrate" />
       <command value="rails db:reset" />
       <command value="rails g model Event title:string desc:string date:string" />
       <command value="pwd" />
@@ -115,7 +114,6 @@
       <command value="npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9 " />
       <command value="rails s'" />
       <command value="guard init livereload" />
-      <command value="bundle" />
       <command value="bundle exec guard init" />
       <command value="bundle exec guard" />
       <command value="raisl c" />
@@ -126,6 +124,11 @@
       <command value="rubocop -a" />
       <command value="rubocop -A" />
       <command value="rails routes" />
+      <command value="rails g migration AddUsernameToUser username:string" />
+      <command value="rails db:migrate" />
+      <command value="bundle" />
+      <command value="annotate --models" />
+      <command value="rails g annotate:install" />
     </option>
   </component>
   <component name="RunManager" selected="Ruby Console.rails console">
@@ -269,7 +272,7 @@
       <updated>1637430901502</updated>
       <workItem from="1637430905858" duration="9206000" />
       <workItem from="1637441733584" duration="27270000" />
-      <workItem from="1637656318398" duration="18649000" />
+      <workItem from="1637656318398" duration="19216000" />
     </task>
     <task id="LOCAL-00001" summary="Add devise">
       <created>1637433985576</created>
@@ -509,7 +512,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637665717542</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Add new event button and form">
+      <created>1637740791476</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1637740791476</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add annotate gem">
+      <created>1637741099556</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1637741099556</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,8 +545,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update to show all events" />
-    <MESSAGE value="Add navbar partial" />
     <MESSAGE value="Add title and description to event" />
     <MESSAGE value="merge master" />
     <MESSAGE value="Install devise" />
@@ -553,7 +568,9 @@
     <MESSAGE value="Add user_id ref to event" />
     <MESSAGE value="Add user show page" />
     <MESSAGE value="Rubocop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rubocop" />
+    <MESSAGE value="Add new event button and form" />
+    <MESSAGE value="Add annotate gem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add annotate gem" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/private_events@rails_console.rcov" NAME="rails console Coverage Results" MODIFIED="1637441271625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="private-events" />

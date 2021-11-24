@@ -50,6 +50,7 @@ group :development do
   gem 'guard-livereload'
   gem 'html2haml'
   gem 'spring'
+  gem 'annotate'
 end
 
 group :test do
