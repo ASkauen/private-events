@@ -4,8 +4,14 @@
     - show_attrs.each do |a|
       #{a}: #{@user[a]}
       %br
-
-.text-center.text-3xl.bold.italic.mt-10
-  #{@user.username}'s events:
-- @user.events.each do |e|
-  = render "events/event", event: e
+.grid.grid-cols-2
+  .grid.grid-rows-auto
+    .text-center.text-3xl.bold.italic.mt-10
+      #{@user.username}'s events:
+    - @user.events.each do |e|
+      = render "events/event", event: e
+  .grid.grid-rows-auto
+    .text-center.text-3xl.bold.italic.mt-10
+      Attending events:
+    - @user.attended_events.each do |e|
+      = render "events/event", event: e
