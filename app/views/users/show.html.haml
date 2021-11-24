@@ -1,17 +1,30 @@
 .flex
+  - param_is_past = params[:display] == 'past'
   .mx-auto
     - show_attrs = [:username, :email, :created_at, :id]
     - show_attrs.each do |a|
       #{a}: #{@user[a]}
       %br
+.grid.grid-cols-2.mt-10
+  .text-center.text-3xl.bold.italic
+    #{@user.username}'s events:
+  .grid.grid-rows-2.justify-items-center
+    .text-center.text-3xl.bold.italic
+      Attending events:
+    .grid.grid-cols-2.rounded-lg.mt-3.border-2{class: "w-1/2"}
+      = link_to user_path(@user) do
+        .text-2xl.text-center{class: "#{"bg-gray-300" unless param_is_past} fill-current"}
+          Coming
+      = link_to user_path(@user, display: :past) do
+        .text-2xl.text-center{class: "#{"bg-gray-300" if param_is_past}"}
+          Past
 .grid.grid-cols-2
   .grid.grid-rows-auto
-    .text-center.text-3xl.bold.italic.mt-10
-      #{@user.username}'s events:
     - @user.events.each do |e|
       = render "events/event", event: e
   .grid.grid-rows-auto
-    .text-center.text-3xl.bold.italic.mt-10
-      Attending events:
-    - @user.attended_events.each do |e|
+    - past_events = @user.attended_events.where('date < ?', Time.now)
+    - coming_events = @user.attended_events.where('date > ?', Time.now)
+    - for_display =  param_is_past ? past_events : coming_events
+    - for_display.each do |e|
       = render "events/event", event: e
