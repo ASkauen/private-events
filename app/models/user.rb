@@ -5,6 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :events, inverse_of: :creator
+  has_many :attendaces
+  has_many :attendes_events, through: :attendaces, source: :event
 
   validates :username, presence: true, uniqueness: true
 end
