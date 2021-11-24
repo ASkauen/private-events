@@ -1,23 +1,30 @@
-.grid.grid-rows-auto.justify-items-center.gap-5.mt-5
-  .text-4xl.italic.font-bold
-    = @event.title
-  .text-gray-600
-    = @event.desc
-  .text-2xl
-    = @event.date
-  .text-xl
-    - creator = @event.creator
-    Created by #{link_to creator.username, user_path(id: creator.id), class: "text-blue-600 hover:underline"}
-  - unless current_user.attendances.find_by(event_id: @event.id)
-    = link_to new_attendance_path(id: @event.id) do
-      .text-2xl.text-green-800.px-10.py-2.bg-green-300.rounded-full.cursor-pointer
-        Attend
-  -else
-    .bg-gray-100.text-center.p-3.shadow-card.rounded-md
-      .italic.mb-3
-        Attending
-      = link_to attendance_path(id: @event.id), method: "DELETE" do
-        .text-xl.text-red-800.px-5.py-1.bg-red-300.rounded-full.cursor-pointer
-          Cancel
-  .text-blue-600.mt-10
-    = link_to "< Back", "javascript:history.back()", class: "hover:underline"
+.grid.grid-cols-3.mt-7
+  .grid.grid-rows-auto.justify-items-center.gap-5.col-start-2
+    .text-4xl.italic.font-bold
+      = @event.title
+    .text-gray-600
+      = @event.desc
+    .text-2xl
+      = @event.date
+    .text-xl
+      - creator = @event.creator
+      Created by #{link_to creator.username, user_path(id: creator.id), class: "text-blue-600 hover:underline"}
+    - unless current_user.attendances.find_by(event_id: @event.id)
+      = link_to new_attendance_path(id: @event.id) do
+        .text-2xl.text-green-800.px-10.py-2.bg-green-300.rounded-full.cursor-pointer
+          Attend
+    -else
+      .bg-gray-100.text-center.p-3.shadow-card.rounded-md
+        .italic.mb-3
+          Attending
+        = link_to attendance_path(id: @event.id), method: "DELETE" do
+          .text-xl.text-red-800.px-5.py-1.bg-red-300.rounded-full.cursor-pointer
+            Cancel
+    .text-blue-600.mt-10
+      = link_to "< Back", "javascript:history.back()", class: "hover:underline"
+  .text-center
+    .text-xl.italic
+      Attending:
+    - @event.attendees.each do |a|
+      = link_to a.username, user_path(a), class: "hover:underline"
+      %br

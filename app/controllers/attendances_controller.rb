@@ -12,8 +12,8 @@ class AttendancesController < ApplicationController
   end
 
   def destroy
-    Attendance.find_by(event_id: params[:id]).delete
-    flash[:notice] = "You are no longer attending this event"
+    Attendance.find_by(user_id: current_user.id, event_id: params[:id]).destroy
+    flash[:alert] = "You are no longer attending this event"
     redirect_to event_path(Event.find(params[:id]))
   end
 
