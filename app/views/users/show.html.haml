@@ -1,8 +1,11 @@
-.text-center
-  - @user.attributes.each do |a|
-    #{a[0]} : #{a[1]}
-    %br
+.flex
+  .mx-auto
+    - show_attrs = [:username, :email, :created_at, :id]
+    - show_attrs.each do |a|
+      #{a}: #{@user[a]}
+      %br
+
 .text-center.text-3xl.bold.italic.mt-10
-  Events:
-  - @user.events.each do |e|
-    = render "events/event", event: e
+  #{@user.username}'s events:
+- @user.events.each do |e|
+  = render "events/event", event: e
