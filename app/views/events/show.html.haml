@@ -1,8 +1,12 @@
-.text-4xl.text-center.italic.font-bold.mt-5
-  = @event.title
-.text-center.text-gray-600.mt-5
-  = @event.desc
-.text-center.text-2xl.mt-5
-  = @event.date
-.text-blue-600.text-center.mt-10
-  = link_to "< Back", "javascript:history.back()", class: "hover:underline"
+.text-center
+  .text-4xl.italic.font-bold.mt-5
+    = @event.title
+  .text-gray-600.mt-5
+    = @event.desc
+  .text-2xl.mt-5
+    = @event.date
+  .text-xl.mt-5
+    - creator = @event.creator
+    Created by #{link_to creator.username, user_path(id: creator.id), class: "text-blue-600 hover:underline"}
+  .text-blue-600.mt-10
+    = link_to "< Back", "javascript:history.back()", class: "hover:underline"
