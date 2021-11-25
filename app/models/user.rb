@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :events, inverse_of: :creator
   has_many :attendances
   has_many :attended_events, through: :attendances, source: :event
+  has_many :invitations, class_name: 'Invite', foreign_key: 'recipient_id'
+  has_many :sent_invites, class_name: 'Invite', foreign_key: 'sender_id'
 
   validates :username, presence: true, uniqueness: true
 end
