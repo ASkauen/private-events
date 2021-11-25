@@ -32,9 +32,10 @@ ActiveRecord::Schema.define(version: 2021_11_25_083527) do
   end
 
   create_table "invites", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "event_id"
-    t.integer "recipient_id"
+    t.integer "sender_id", null: false
+    t.integer "event_id", null: false
+    t.integer "recipient_id", null: false
+
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_invites_on_event_id"
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_11_25_083527) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
