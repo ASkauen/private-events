@@ -1,2 +1,9 @@
-- @events.each do |event|
-  = render "event", event: event
+.grid.grid-cols-2.mt-10
+  .text-center
+    %p.text-3xl.font-bold Coming:
+    - @events.coming.each do |e|
+      = render "events/event", event: e
+  .text-center
+    %p.text-3xl.font-bold Past:
+    - @events.past.each do |e|
+      = render "events/event", event: e
