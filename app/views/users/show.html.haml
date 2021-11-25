@@ -23,8 +23,8 @@
     - @user.events.each do |e|
       = render "events/event", event: e
   .grid.grid-rows-auto
-    - past_events = @user.attended_events.where('date < ?', Time.now)
-    - coming_events = @user.attended_events.where('date > ?', Time.now)
+    - past_events = @user.attended_events.past
+    - coming_events = @user.attended_events.coming
     - for_display =  param_is_past ? past_events : coming_events
     - for_display.each do |e|
       = render "events/event", event: e
