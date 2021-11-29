@@ -1,5 +1,21 @@
-.grid.grid-cols-3.mt-7
-  .grid.grid-rows-auto.justify-items-center.gap-5.col-start-2
+- user_is_creator = current_user.username == @event.creator.username
+.grid.grid-cols-3.mt-7.z-0
+  .text-center.w-auto.justify-self-center
+    .text-3xl.italic.px-3
+      Invited:
+    .h-80.overflow-y-auto.mt-1
+      - @event.invites.each do |i|
+        .grid.grid-cols-3.items-center
+          = link_to i.recipient.username, user_path(i.recipient), class: "col-span-#{user_is_creator ? "2" : "3"} block hover:underline"
+          = link_to "X", invite_path(id: i.id), method: 'DELETE', class: "bg-red-400 text-sm w-min px-2 justify-self-end" if user_is_creator
+        %br
+    - if user_is_creator
+      #invite
+        = link_to event_path(@event, invite: :show) do
+          .bg-green-400.px-5.py-2.text-white.rounded-md.cursor-pointer.text-lg
+            Invite people
+      = render 'invites/people'
+  .grid.grid-rows-auto.justify-items-center.gap-5
     .text-4xl.italic.font-bold
       = @event.title
     .text-gray-600
@@ -9,7 +25,7 @@
     .text-xl
       - creator = @event.creator
       Created by #{link_to creator.username, user_path(id: creator.id), class: "text-blue-600 hover:underline"}
-    - if current_user.username == @event.creator.username
+    - if user_is_creator
       .inline-flex.gap-3
         = link_to edit_event_path do
           .text-xl.px-5.py-2.bg-gray-200.rounded-md.hover:bg-gray-300
@@ -18,22 +34,36 @@
           .text-xl.px-5.py-2.bg-red-200.rounded-md.hover:bg-red-300
             Delete
     - else
-      - unless current_user.attendances.find_by(event_id: @event.id)
-        = link_to new_attendance_path(id: @event.id) do
-          .text-2xl.text-green-800.px-10.py-2.bg-green-300.rounded-full.cursor-pointer
-            Attend
-      -else
-        .bg-gray-100.text-center.p-3.shadow-card.rounded-md
-          .italic.mb-3
-            Attending
-          = link_to attendance_path(id: @event.id), method: "DELETE" do
-            .text-xl.text-red-800.px-5.py-1.bg-red-300.rounded-full.cursor-pointer
+      - invite = @event.invites.find_by(recipient_id: current_user.id)
+      - attendance = @event.attendances.find_by(user_id: current_user.id)
+      - if invite
+        .bg-gray-100.grid.grid-rows-2.justify-items-center.p-6.rounded-lg.border.border-gray-300
+          .text-lg.italic.text-gray-600
+            You have been invited to attend this event
+          .grid.grid-cols-2.justify-items-center.w-full
+            = link_to accept_invite_path(id: invite.id), class: "bg-green-400 text-center rounded-md text-white w-2/3 self-center py-2", method: 'POST' do
+              Accept
+            = link_to decline_invite_path(id: invite.id), class: "bg-red-400 text-center rounded-md text-white w-2/3 self-center py-2", method: 'POST' do
+              Decline
+      - elsif attendance
+        .bg-gray-100.grid.grid-rows-2.justify-items-center.p-6.rounded-lg.border.border-gray-300
+          .text-lg.italic.text-gray-600
+            You are attending this event
+          .flex.w-full
+            = link_to attendance_path(id: attendance.id), class: "bg-red-400 mx-auto text-center rounded-md text-white w-2/3 self-center py-2", method: 'DELETE' do
               Cancel
     .text-blue-600.mt-10
       = link_to "< Back", "javascript:history.back()", class: "hover:underline"
-  .text-center
-    .text-xl.italic
+  .text-center.w-auto.justify-self-center
+    .text-3xl.italic.px-3
       Attending:
-    - @event.attendees.each do |a|
-      = link_to a.username, user_path(a), class: "hover:underline"
-      %br
+    .h-80.overflow-y-auto.mt-1
+      - @event.attendees.each do |a|
+        .grid.grid-cols-3.items-center
+          = link_to a.username, user_path(a), class: "col-span-#{user_is_creator ? "2" : "3"} block hover:underline"
+          = link_to "X", kick_attendee_path(id: Attendance.find_by(event_id: params[:id])), method: 'DELETE', class: "bg-red-400 text-sm w-min px-2 justify-self-end"  if user_is_creator
+        %br
+%script{type: "text/javascript"}
+  document.getElementById("outside").addEventListener("mousedown", function() {
+  window.location = window.location.href.split("?")[0];
+  })

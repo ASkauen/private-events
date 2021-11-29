@@ -12,9 +12,16 @@ class AttendancesController < ApplicationController
   end
 
   def destroy
-    Attendance.find_by(user_id: current_user.id, event_id: params[:id]).destroy
+    Attendance.find(params[:id]).destroy
     flash[:alert] = "You are no longer attending this event"
-    redirect_to event_path(Event.find(params[:id]))
+    refresh_page
   end
 
+  def kick
+    attendance = Attendance.find(params[:id])
+    user = attendance.user
+    attendance.destroy
+    flash[:alert] = "Kicked #{user.username} from event"
+    refresh_page
+  end
 end

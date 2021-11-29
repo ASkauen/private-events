@@ -2,15 +2,35 @@
   .text-4xl.italic.ml-5
     = link_to "Private Events", root_url
   - unless request.path == new_event_path
-    = link_to new_event_path do
-      .flex-box.text-center.rounded-md.text-white.text-2xl.bg-green-400.mx-auto.py-2.shadow-lg{class: "w-1/2"}
+    = link_to new_event_path, class: "w-1/2 mx-auto" do
+      .text-center.rounded-md.text-white.text-2xl.bg-green-400.px-0.py-2.shadow-lg
         New event
   - else
     %p
   .flex.gap-10.ml-auto.mr-10.items-center
     - if user_signed_in?
+      = render "invites/list"
+      .inline-flex
+        = image_tag "bell-solid.svg", class: "w-4 cursor-pointer", id: "notifs"
+        - if current_user.invitations.any?
+          .text-red-500.mb-2
+            ●
       = link_to current_user.username, user_path(id: current_user.id), class: "text-xl font-medium"
       = link_to "Sign out", destroy_user_session_path, method: :delete
     - else
       = link_to "Sign in", new_user_session_path
       = link_to "Sign up", new_user_registration_path
+%script{type: "text/javascript"}
+  if(typeof list === 'undefined'){
+  let list = document.getElementById("notif_list")
+  let button = document.getElementById("notifs")
+  window.addEventListener("click", function(e){
+  if(e.target == list){
+  return
+  }else if(e.target == button){
+  list.classList.toggle("hidden")
+  }else{
+  list.classList.add("hidden")
+  }
+  })
+  }

@@ -1,0 +1,21 @@
+#notif_list.notifs.fixed.w-auto.h-80.rounded-md.shadow-card.bg-white.top-0.right-64.top-16.z-10.hidden
+  %ul.overflow-y-auto.h-full.mx-auto.text-center{class: "w-11/12"}
+    - invitations = current_user.invitations
+    -  if invitations.any?
+      - invitations.each do |i|
+        .grid.grid-cols-3.w-auto
+          = link_to event_path(i.event), class: "notif col-span-2" do
+            %li.my-2.border.border-blue-200.bg-blue-100.rounded-md.mx-3.w-max.px-2
+              #{i.sender.username} invited you to:
+              %br
+              #{i.event.title}
+          .grid.grid-rows-2
+            = link_to accept_invite_path(id: i.id), method: 'POST' do
+              .bg-green-400.mx-3.mt-2.hover:bg-green-500
+                Accept
+            = link_to decline_invite_path(id: i.id), method: 'POST' do
+              .bg-red-400.mx-3.mb-2.hover:bg-red-500
+                Decline
+    - else
+      .px-10.mt-20.italic.text-gray-400
+        No Invitations

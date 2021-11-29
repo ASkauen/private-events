@@ -17,6 +17,7 @@ class EventsController < ApplicationController
   def show
     puts params[:id]
     @event = Event.find(params[:id])
+    @users = User.all
   end
 
   def new
